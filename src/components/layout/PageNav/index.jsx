@@ -1,8 +1,25 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
+import Logo from '../../ui/Logo';
 import styles from './index.module.css';
 
 const PageNav = () => {
-  return <div className={styles.nav}>PageNav</div>;
+  return (
+    <nav className={styles.nav}>
+      <Logo />
+      <ul>
+        <li>
+          <NavLink to='/pricing'>Pricing</NavLink>
+        </li>
+        <li>
+          <NavLink to='/product'>Product</NavLink>
+        </li>
+        <li>
+          <NavLink to='/login'>Login</NavLink>
+        </li>
+      </ul>
+    </nav>
+  );
 };
 
 export default PageNav;
