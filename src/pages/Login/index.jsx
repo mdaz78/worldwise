@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import PageNav from '../../components/layout/PageNav';
 import styles from './index.module.css';
 
 export default function Login() {
@@ -8,6 +9,7 @@ export default function Login() {
 
   return (
     <main className={styles.login}>
+      <PageNav />
       <form className={styles.form}>
         <div className={styles.row}>
           <label htmlFor='email'>Email address</label>
