@@ -1,4 +1,4 @@
-import AppNav from '../../components/layout/AppNav';
+import AppNav from '../../components/AppNav';
 import styles from './index.module.css';
 
 export default function AppLayout() {
