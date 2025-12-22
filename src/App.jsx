@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import CityList from './components/CityList';
 import AppLayout from './pages/AppLayout';
 import Homepage from './pages/Homepage';
 import Login from './pages/Login';
@@ -17,8 +18,8 @@ function App() {
             <Route path='pricing' element={<Pricing />} />
             <Route path='login' element={<Login />} />
             <Route path='app' element={<AppLayout />}>
-              <Route index element={<p>LIST</p>} />
-              <Route path='cities' element={<p>List of cities</p>} />
+              <Route index element={<CityList />} />
+              <Route path='cities' element={<CityList />} />
               <Route path='countries' element={<p>Countries</p>} />
               <Route path='form' element={<p>Form</p>} />
             </Route>
