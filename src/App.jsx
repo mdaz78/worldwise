@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import City from './components/City';
 import CityList from './components/CityList';
 import CountryList from './components/CountryList';
 import { BASE_URL } from './constants';
@@ -49,6 +50,7 @@ function App() {
                 path='cities'
                 element={<CityList isLoading={isLoading} cities={cities} />}
               />
+              <Route path='cities/:id' element={<City />} />
               <Route
                 path='countries'
                 element={<CountryList cities={cities} isLoading={isLoading} />}
