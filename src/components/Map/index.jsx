@@ -1,14 +1,15 @@
-import { useSearchParams } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import styles from './index.module.css';
 
 const Map = () => {
+  const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
 
   const latitude = searchParams.get('lat');
   const longitude = searchParams.get('lng');
 
   return (
-    <div className={styles.mapContainer}>
+    <div className={styles.mapContainer} onClick={() => navigate('form')}>
       <h1>Map</h1>
       <h1>
         Position: {latitude}:{longitude}
