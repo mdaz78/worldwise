@@ -3,7 +3,7 @@ import { formatDate } from '../../utils';
 
 import { useEffect } from 'react';
 import useCitiesContext from '../../hooks/useCitiesContext';
-import Button from '../Button';
+import BackButton from '../BackButton';
 import Spinner from '../Spinner';
 import styles from './index.module.css';
 
@@ -56,9 +56,7 @@ function City() {
       </div>
 
       <div>
-        <Button type='back' onClick={() => navigate(-1, { replace: true })}>
-          &larr; Back
-        </Button>
+        <BackButton />
       </div>
     </div>
   );
