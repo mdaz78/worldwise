@@ -18,7 +18,6 @@ const reducer = (state, action) => {
       };
 
     case 'cities/loaded':
-      console.log({ 'cities/loaded': action.payload });
       return {
         ...state,
         isLoading: false,
