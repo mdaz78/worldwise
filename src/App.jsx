@@ -9,13 +9,6 @@ import CityList from './components/CityList';
 import CountryList from './components/CountryList';
 import Form from './components/Form';
 
-// import AppLayout from './pages/AppLayout';
-// import Homepage from './pages/Homepage';
-// import Login from './pages/Login';
-// import PageNotFound from './pages/PageNotFound';
-// import Pricing from './pages/Pricing';
-// import Product from './pages/Product';
-
 import SpinnerFullPage from './components/SpinnerFullPage';
 import ProtectedRoute from './pages/ProtectedRoute';
 
@@ -30,33 +23,66 @@ function App() {
   return (
     <AuthProvider>
       <CitiesProvider>
-        <div>
-          <BrowserRouter>
-            <Suspense fallback={<SpinnerFullPage />}>
-              <Routes>
-                <Route index element={<Homepage />} />
-                <Route path='product' element={<Product />} />
-                <Route path='pricing' element={<Pricing />} />
-                <Route path='login' element={<Login />} />
-                <Route
-                  path='app'
-                  element={
-                    <ProtectedRoute>
-                      <AppLayout />
-                    </ProtectedRoute>
-                  }
-                >
-                  <Route index element={<Navigate to='cities' replace />} />
-                  <Route path='cities' element={<CityList />} />
-                  <Route path='cities/:id' element={<City />} />
-                  <Route path='countries' element={<CountryList />} />
-                  <Route path='form' element={<Form />} />
-                </Route>
-                <Route path='*' element={<PageNotFound />} />
-              </Routes>
-            </Suspense>
-          </BrowserRouter>
-        </div>
+        <BrowserRouter>
+          <Routes>
+            <Route
+              index
+              element={
+                <Suspense fallback={<SpinnerFullPage />} key='/'>
+                  <Homepage />
+                </Suspense>
+              }
+            />
+            <Route
+              path='product'
+              element={
+                <Suspense fallback={<SpinnerFullPage />} key='product'>
+                  <Product />
+                </Suspense>
+              }
+            />
+            <Route
+              path='pricing'
+              element={
+                <Suspense fallback={<SpinnerFullPage />} key='pricing'>
+                  <Pricing />
+                </Suspense>
+              }
+            />
+            <Route
+              path='login'
+              element={
+                <Suspense fallback={<SpinnerFullPage />} key='login'>
+                  <Login />
+                </Suspense>
+              }
+            />
+            <Route
+              path='app'
+              element={
+                <ProtectedRoute>
+                  <Suspense fallback={<SpinnerFullPage />} key='app'>
+                    <AppLayout />
+                  </Suspense>
+                </ProtectedRoute>
+              }
+            >
+              <Route index element={<Navigate to='cities' replace />} />
+              <Route path='cities' element={<CityList />} />
+              <Route path='cities/:id' element={<City />} />
+              <Route path='countries' element={<CountryList />} />
+              <Route path='form' element={<Form />} />
+            </Route>
+            <Route
+              path='*'
+              element={
+                <Suspense fallback={<SpinnerFullPage />} key='404'>
+                  <PageNotFound />
+                </Suspense>
+              }
+            />
+          </Routes>
+        </BrowserRouter>
       </CitiesProvider>
     </AuthProvider>
   );
