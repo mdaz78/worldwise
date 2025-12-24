@@ -19,6 +19,11 @@ const PageNotFound = lazy(() => import('./pages/PageNotFound'));
 const Pricing = lazy(() => import('./pages/Pricing'));
 const Product = lazy(() => import('./pages/Product'));
 
+// NOTE: Each Suspense boundary needs a unique key prop to properly display the fallback
+// during route transitions. This is due to a known issue with React Router v6/v7:
+// https://github.com/remix-run/react-router/issues/12474
+// Without the key, the Suspense fallback won't show and the old page remains visible
+// until the new lazy-loaded component finishes loading.
 function App() {
   return (
     <AuthProvider>
