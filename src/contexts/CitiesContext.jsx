@@ -1,4 +1,4 @@
-import { useEffect, useReducer } from 'react';
+import { useCallback, useEffect, useReducer } from 'react';
 import { BASE_URL } from '../constants';
 import { CitiesContext } from './CitiesContextValue';
 
@@ -82,7 +82,7 @@ const CitiesProvider = ({ children }) => {
     fetchCites();
   }, []);
 
-  const getCity = async (id) => {
+  const getCity = useCallback(async (id) => {
     dispatch({ type: 'loading' });
     try {
       const res = await fetch(`${BASE_URL}/cities/${id}`);
@@ -94,9 +94,9 @@ const CitiesProvider = ({ children }) => {
         payload: 'There was an error loading city',
       });
     }
-  };
+  }, []);
 
-  const createCity = async (newCity) => {
+  const createCity = useCallback(async (newCity) => {
     dispatch({ type: 'loading' });
 
     try {
@@ -115,9 +115,9 @@ const CitiesProvider = ({ children }) => {
         payload: 'There was an error creating city',
       });
     }
-  };
+  }, []);
 
-  const deleteCity = async (id) => {
+  const deleteCity = useCallback(async (id) => {
     dispatch({ type: 'loading' });
     try {
       await fetch(`${BASE_URL}/cities/${id}`, {
@@ -131,7 +131,7 @@ const CitiesProvider = ({ children }) => {
         payload: 'There was an error deleting city',
       });
     }
-  };
+  }, []);
 
   const value = {
     cities,
