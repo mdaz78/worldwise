@@ -1,4 +1,5 @@
 export const BASE_URL = `http://localhost:8000`;
+export const GEOCODING_API_URL = `https://api.bigdatacloud.net/data/reverse-geocode-client`;
 
 export const FAKE_USER = {
   name: 'Jack',

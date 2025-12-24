@@ -1,4 +1,4 @@
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { formatDate } from '../../utils';
 
 import { useEffect } from 'react';
@@ -10,8 +10,6 @@ import styles from './index.module.css';
 function City() {
   const { id } = useParams();
   const { isLoading, getCity, currentCity } = useCitiesContext();
-
-  const navigate = useNavigate();
 
   useEffect(() => {
     getCity(id);

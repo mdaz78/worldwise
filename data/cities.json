@@ -35,6 +35,78 @@
         "lng": 13.376933665713324
       },
       "id": 98443197
+    },
+    {
+      "cityName": "Foggaret Ezzaou",
+      "country": "Algeria",
+      "emoji": "🇩🇿",
+      "date": "2025-12-24T05:02:17.179Z",
+      "notes": "aoeu",
+      "position": {
+        "lat": 27.332735136859146,
+        "lng": 3.3618164062500004
+      },
+      "id": 98443198
+    },
+    {
+      "cityName": "Kolkata",
+      "country": "India",
+      "emoji": "🇮🇳",
+      "date": "2025-12-24T05:02:59.515Z",
+      "notes": "Good Place",
+      "position": {
+        "lat": 22.59119025242292,
+        "lng": 88.52233886718751
+      },
+      "id": 98443199
+    },
+    {
+      "cityName": "Ranaghat",
+      "country": "India",
+      "emoji": "🇮🇳",
+      "date": "2025-12-24T05:04:29.069Z",
+      "notes": "Want to visit",
+      "position": {
+        "lat": 23.17066382710224,
+        "lng": 88.60473632812501
+      },
+      "id": 98443200
+    },
+    {
+      "cityName": "Feldberger Seenlandschaft",
+      "country": "Germany",
+      "emoji": "🇩🇪",
+      "date": "2025-12-24T05:05:34.997Z",
+      "notes": "",
+      "position": {
+        "lat": 53.330872983017066,
+        "lng": 13.46923828125
+      },
+      "id": 98443201
+    },
+    {
+      "cityName": "Anklam",
+      "country": "Germany",
+      "emoji": "🇩🇪",
+      "date": "2025-12-24T05:06:12.120Z",
+      "notes": "",
+      "position": {
+        "lat": 53.85900655610469,
+        "lng": 13.69720458984375
+      },
+      "id": 98443202
+    },
+    {
+      "cityName": "Pasewalk",
+      "country": "Germany",
+      "emoji": "🇩🇪",
+      "date": "2025-12-24T05:06:36.982Z",
+      "notes": "",
+      "position": {
+        "lat": 53.51091802900767,
+        "lng": 14.01031494140625
+      },
+      "id": 98443203
     }
   ]
 }
